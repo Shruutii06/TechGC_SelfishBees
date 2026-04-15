@@ -1,0 +1,21 @@
+event_name,sport,geography,typical_attendance,avg_price_usd,vip_price_usd,ticket_tier,annual_revenue_est_usd,source
+Super Bowl,American_Football,Usa,70000,500,10000,Premium,24500000,https://en.wikipedia.org/wiki/Super_Bowl
+FIFA World Cup Final,Soccer,Global,88000,200,5000,Mid,12320000,https://en.wikipedia.org/wiki/FIFA_World_Cup
+IPL Final,Cricket,India,90000,15,500,Budget,945000,https://en.wikipedia.org/wiki/Indian_Premier_League
+Wimbledon Final,Tennis,Uk,15000,100,3000,Mid,1050000,https://en.wikipedia.org/wiki/Wimbledon_Championships
+NBA Finals,Basketball,Usa,20000,200,5000,Mid,2800000,https://en.wikipedia.org/wiki/NBA_Finals
+UEFA Champions League Final,Soccer,Europe,75000,100,3000,Mid,5250000,https://en.wikipedia.org/wiki/UEFA_Champions_League_Final
+Formula One Grand Prix,Formula1,Global,200000,50,2000,Budget,7000000,https://en.wikipedia.org/wiki/Formula_One
+Olympics Opening Ceremony,Multi-Sport,Global,80000,500,20000,Premium,28000000,https://en.wikipedia.org/wiki/Summer_Olympics
+ICC Cricket World Cup Final,Cricket,Global,90000,30,1000,Budget,1890000,https://en.wikipedia.org/wiki/ICC_Cricket_World_Cup
+Masters Golf,Golf,Usa,50000,100,5000,Mid,3500000,https://en.wikipedia.org/wiki/Masters_Tournament
+US Open Tennis,Tennis,Usa,23000,100,3000,Mid,1610000,https://en.wikipedia.org/wiki/US_Open_(tennis)
+Tour de France,Cycling,France,12000000,0,0,Budget,0,https://en.wikipedia.org/wiki/Tour_de_France
+Rugby World Cup Final,Rugby,Global,80000,150,4000,Mid,8400000,https://en.wikipedia.org/wiki/Rugby_World_Cup
+Boston Marathon,Athletics,Usa,500000,250,500,Premium,87500000,https://en.wikipedia.org/wiki/Boston_Marathon
+Kentucky Derby,Horse_Racing,Usa,150000,200,10000,Mid,21000000,https://en.wikipedia.org/wiki/Kentucky_Derby
+Australian Open Final,Tennis,Australia,15000,80,2000,Mid,840000,https://en.wikipedia.org/wiki/Australian_Open
+MMA UFC Pay-Per-View,Mma,Usa,20000,150,5000,Mid,2100000,https://en.wikipedia.org/wiki/Ultimate_Fighting_Championship
+Indian Super League Final,Soccer,India,60000,10,200,Budget,420000,https://en.wikipedia.org/wiki/Indian_Super_League
+Pro Kabaddi League Final,Kabaddi,India,15000,5,100,Budget,52500,https://en.wikipedia.org/wiki/Pro_Kabaddi_League
+Hockey World Cup Final,Field_Hockey,Global,50000,20,500,Budget,700000,https://en.wikipedia.org/wiki/FIH_Hockey_World_Cup

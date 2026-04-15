@@ -1,0 +1,188 @@
+{
+  "input": {
+    "event_category": "cricket",
+    "geography": "India",
+    "target_audience_size": 50000,
+    "budget_usd": null,
+    "event_name": "IPL Fan Fest 2026",
+    "additional_notes": null
+  },
+  "sponsors": [
+    {
+      "sponsor_name": "Tata Group",
+      "sponsor_type": "Title Sponsor",
+      "relevance_reason": "The Tata Group previously held the title sponsorship rights for the IPL in 2022, making them a highly relevant sponsor for the IPL Fan Fest 2026. Their previous involvement with the IPL demonstrates their interest in cricket-related events.",
+      "estimated_deal_range": "$60M - $70M",
+      "priority": "High"
+    },
+    {
+      "sponsor_name": "MRF",
+      "sponsor_type": "Official Bat Sponsor",
+      "relevance_reason": "MRF is an official sponsor of the IPL, which aligns with the cricket category of the IPL Fan Fest 2026. Their existing partnership with the IPL makes them a strong candidate for sponsorship.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "High"
+    },
+    {
+      "sponsor_name": "Cadbury",
+      "sponsor_type": "Official Snack Partner",
+      "relevance_reason": "Although Cadbury is currently partnered with the Premier League, their experience as an official snack partner could translate well to the IPL Fan Fest 2026. Their presence in India could also be an advantage.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "Medium"
+    },
+    {
+      "sponsor_name": "Nike",
+      "sponsor_type": "Official Apparel Partner",
+      "relevance_reason": "As an official ball supplier for the Premier League, Nike has experience in partnering with sports events. Their global presence and reputation in the sports industry make them a potential sponsor for the IPL Fan Fest 2026.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "Medium"
+    },
+    {
+      "sponsor_name": "Barclays",
+      "sponsor_type": "Official Banking Partner",
+      "relevance_reason": "Although Barclays is currently partnered with the Premier League, their experience as a title sponsor could be valuable for the IPL Fan Fest 2026. However, their lack of direct involvement with cricket may reduce their relevance.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "Low"
+    },
+    {
+      "sponsor_name": "Google",
+      "sponsor_type": "Official Technology Partner",
+      "relevance_reason": "As an official search partner for the NBA, Google has experience in partnering with sports events. Their global presence and reputation in the technology industry make them a potential sponsor for the IPL Fan Fest 2026.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "Low"
+    },
+    {
+      "sponsor_name": "EA Sports",
+      "sponsor_type": "Gaming Partner",
+      "relevance_reason": "Although EA Sports is currently partnered with La Liga, their experience in the sports industry and popularity among cricket fans could make them a potential sponsor for the IPL Fan Fest 2026.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "Low"
+    },
+    {
+      "sponsor_name": "Lucas Oil",
+      "sponsor_type": "Official Lubricant Partner",
+      "relevance_reason": "Although Lucas Oil is currently partnered with the English football league, their experience as a main sponsor could be valuable for the IPL Fan Fest 2026. However, their lack of direct involvement with cricket may reduce their relevance.",
+      "estimated_deal_range": "Negotiable",
+      "priority": "Low"
+    }
+  ],
+  "speakers": null,
+  "exhibitors": null,
+  "venues": null,
+  "pricing": null,
+  "communities": null,
+  "ops_plan": {
+    "agenda": [
+      {
+        "time_slot": "9:00 AM - 9:30 AM",
+        "session_title": "Opening Ceremony",
+        "session_type": "Ceremony",
+        "speaker_or_performer": "TBD",
+        "room_or_stage": "Main Stage",
+        "duration_minutes": 30
+      },
+      {
+        "time_slot": "9:30 AM - 10:30 AM",
+        "session_title": "IPL Team Owners' Panel",
+        "session_type": "Panel Discussion",
+        "speaker_or_performer": "IPL Team Owners",
+        "room_or_stage": "Main Stage",
+        "duration_minutes": 60
+      },
+      {
+        "time_slot": "10:30 AM - 10:50 AM",
+        "session_title": "Networking Break",
+        "session_type": "Break",
+        "speaker_or_performer": "None",
+        "room_or_stage": "Entire Venue",
+        "duration_minutes": 20
+      },
+      {
+        "time_slot": "10:50 AM - 12:00 PM",
+        "session_title": "Cricket Analytics and Strategy",
+        "session_type": "Keynote",
+        "speaker_or_performer": "TBD",
+        "room_or_stage": "Main Stage",
+        "duration_minutes": 70
+      },
+      {
+        "time_slot": "12:00 PM - 1:00 PM",
+        "session_title": "Lunch Break",
+        "session_type": "Break",
+        "speaker_or_performer": "None",
+        "room_or_stage": "Entire Venue",
+        "duration_minutes": 60
+      },
+      {
+        "time_slot": "1:00 PM - 2:30 PM",
+        "session_title": "IPL Players' Panel",
+        "session_type": "Panel Discussion",
+        "speaker_or_performer": "IPL Players",
+        "room_or_stage": "Main Stage",
+        "duration_minutes": 90
+      },
+      {
+        "time_slot": "2:30 PM - 2:50 PM",
+        "session_title": "Networking Break",
+        "session_type": "Break",
+        "speaker_or_performer": "None",
+        "room_or_stage": "Entire Venue",
+        "duration_minutes": 20
+      },
+      {
+        "time_slot": "2:50 PM - 4:00 PM",
+        "session_title": "Fantasy Cricket and Gaming",
+        "session_type": "Workshop",
+        "speaker_or_performer": "TBD",
+        "room_or_stage": "Side Stage",
+        "duration_minutes": 70
+      },
+      {
+        "time_slot": "4:00 PM - 4:30 PM",
+        "session_title": "Networking Break",
+        "session_type": "Break",
+        "speaker_or_performer": "None",
+        "room_or_stage": "Entire Venue",
+        "duration_minutes": 30
+      },
+      {
+        "time_slot": "4:30 PM - 6:00 PM",
+        "session_title": "IPL Legends' Panel",
+        "session_type": "Panel Discussion",
+        "speaker_or_performer": "IPL Legends",
+        "room_or_stage": "Main Stage",
+        "duration_minutes": 90
+      },
+      {
+        "time_slot": "6:00 PM - 6:30 PM",
+        "session_title": "Closing Ceremony",
+        "session_type": "Ceremony",
+        "speaker_or_performer": "TBD",
+        "room_or_stage": "Main Stage",
+        "duration_minutes": 30
+      },
+      {
+        "time_slot": "6:30 PM - 8:00 PM",
+        "session_title": "Final Networking and Event Wrap-up",
+        "session_type": "Networking",
+        "speaker_or_performer": "None",
+        "room_or_stage": "Entire Venue",
+        "duration_minutes": 90
+      }
+    ],
+    "conflicts_detected": [],
+    "resource_plan": {
+      "total_rooms_needed": 2,
+      "total_staff_est": 50,
+      "equipment_checklist": [
+        "Sound systems",
+        "Lighting",
+        "Projectors",
+        "Screens",
+        "Microphones"
+      ],
+      "logistics_notes": "Arrange for catering, security, and crowd control. Ensure sufficient parking and transportation options."
+    },
+    "event_day_summary": "The IPL Fan Fest 2026 will feature a packed agenda with a mix of panel discussions, keynotes, workshops, and networking breaks. The event will bring together IPL team owners, players, legends, and fans for a day of engaging discussions and activities. The event will conclude with a closing ceremony and final networking session."
+  },
+  "errors": []
+}

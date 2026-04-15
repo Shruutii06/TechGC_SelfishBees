@@ -1,0 +1,55 @@
+community_name,platform,sport,geography,members,description,url,niche,organization,source
+r/nfl,Reddit,Football,Usa,12720148,The place to discuss all NFL related things,https://reddit.com/r/nfl,football,NFL,reddit_api_public
+r/nba,Reddit,Basketball,Usa,17027015,A community for NBA discussion.,https://reddit.com/r/nba,basketball,NBA,reddit_api_public
+r/cricket,Reddit,Cricket,Global,1806872,"News, banter and occasional serious discussion on the great game.",https://reddit.com/r/cricket,cricket,ICC,reddit_api_public
+r/formula1,Reddit,Formula1,Global,6639949,"Welcome to r/Formula1, the best independent online Formula 1 community! Tap ""See more"" for calendar and standings 👇",https://reddit.com/r/formula1,formula1,F1,reddit_api_public
+r/soccer,Reddit,Soccer,Global,8626565,"The football subreddit. 
+
+News, results, and discussion about the beautiful game.",https://reddit.com/r/soccer,soccer,FIFA,reddit_api_public
+r/hockey,Reddit,Ice_Hockey,Usa,3062016,"Discuss the NHL, PWHL, IIHF, and all other hockey you can think of!
+
+We are the premier subreddit to talk everything hockey!",https://reddit.com/r/hockey,ice_hockey,NHL,reddit_api_public
+r/baseball,Reddit,Baseball,Usa,3119330,"The BIGGEST and BEST subreddit for baseball. The focus is mainly on MLB, but posts about other leagues and levels are welcome!
+
+Official r/baseball Discord: https://discord.gg/rbaseball
+
+Shohei Ohtani",https://reddit.com/r/baseball,baseball,MLB,reddit_api_public
+r/mma,Reddit,Mma,Global,3623958,A subreddit for all things Mixed Martial Arts.,https://reddit.com/r/mma,mma,UFC,reddit_api_public
+r/golf,Reddit,Golf,Global,1733067,Welcome to the front page of golf on the internet!,https://reddit.com/r/golf,golf,PGA,reddit_api_public
+r/tennis,Reddit,Tennis,Global,2061778,"Professional tennis discussion. Feel free to visit our sister sub for more information on technique, r/10s.",https://reddit.com/r/tennis,tennis,ATP,reddit_api_public
+r/PremierLeague,Reddit,Soccer,Uk,5016258,A community for the English Premier League,https://reddit.com/r/PremierLeague,soccer,EPL,reddit_api_public
+r/IPL,Reddit,Cricket,India,812496,"A subreddit for fans of the Indian Premier League (IPL), one of the world's most-watched sports leagues. A place to share news, opinions, and discuss IPL.",https://reddit.com/r/IPL,cricket,BCCI,reddit_api_public
+r/IndianFootball,Reddit,Soccer,India,239217,"This subreddit is dedicated to all aspects of Indian football, including the Indian Super League (ISL), Indian Football League (IFL), the Men's and Women's National Teams, Youth teams, the Santosh Tro",https://reddit.com/r/IndianFootball,soccer,AIFF,reddit_api_public
+r/CricketShitpost,Reddit,Cricket,Global,612075,Best memes and exclusive shitposts related to Cricket.,https://reddit.com/r/CricketShitpost,cricket,ICC,reddit_api_public
+r/rugbyunion,Reddit,Rugby,Global,875463,"Welcome to the Rugby Union subreddit, for all your rugby union news, analysis, opinions and live match discussions.",https://reddit.com/r/rugbyunion,rugby,World Rugby,reddit_api_public
+r/athletics,Reddit,Athletics,Global,2176,A virtual home for the vagabond A's,https://reddit.com/r/athletics,athletics,World Athletics,reddit_api_public
+r/boxing,Reddit,Boxing,Global,3124647,"Welcome to /r/boxing, reddit's home for pro boxing enthusiasts! Please check out our rules and FAQs before posting: https://www.reddit.com/r/Boxing/wiki/index.
+
+Our basic rules are...
+
+* Be civil - no",https://reddit.com/r/boxing,boxing,WBC,reddit_api_public
+r/cycling,Reddit,Cycling,Global,1452547,"Discussion of everything bicycle related.
+
+bikeit!
+
+bike
+bikes
+bicycle
+bicycles
+bicycling
+cycling",https://reddit.com/r/cycling,cycling,UCI,reddit_api_public
+r/ProKabaddi,Reddit,Kabaddi,India,484,A subreddit dedicated to fans of the Pro Kabaddi league.,https://reddit.com/r/ProKabaddi,kabaddi,PKL,reddit_api_public
+r/Badminton,Reddit,Badminton,Global,183713,"News, reviews, events, discussions and everything else related to badminton. Drop by our wiki first before you post!",https://reddit.com/r/Badminton,badminton,BWF,reddit_api_public
+r/eSports,Reddit,Esports,Global,336164,esports,https://reddit.com/r/eSports,esports,Riot,reddit_api_public
+NBA Discord,Discord,Basketball,Usa,500000,Official NBA fan Discord,https://discord.gg/nba,basketball,NBA,manual_research
+Cricket.com Community,Web Forum,Cricket,India,300000,Cricket news & community,https://cricket.com,cricket,BCCI,manual_research
+F1 Discord,Discord,Formula1,Global,250000,Formula 1 fan community,https://discord.gg/formula1,formula1,F1,manual_research
+WWE Universe,Facebook Group,Wrestling,Global,1200000,WWE fan group,https://facebook.com/groups/wweuniverse,wrestling,WWE,manual_research
+Cricbuzz Fan Zone,Mobile App,Cricket,India,5000000,Live scores & fan zone,https://cricbuzz.com,cricket,BCCI,manual_research
+ESPN FC Community,Web Forum,Soccer,Global,800000,ESPN Soccer discussion,https://espn.com/soccer,soccer,FIFA,manual_research
+Fever Pitch - Football Fans India,Facebook Group,Soccer,India,200000,Indian football fans,https://facebook.com/groups/feverpitch,soccer,AIFF,manual_research
+PKL Fantasy League,Mobile App,Kabaddi,India,1000000,Pro Kabaddi fantasy app,https://dream11.com,kabaddi,PKL,manual_research
+Olympics Fan Community,Facebook Group,Multi-Sport,Global,3000000,Olympic Games fans,https://facebook.com/olympics,multi-sport,IOC,manual_research
+Khel Now,Web/App,Multi-Sport,India,500000,Indian sports news community,https://khelnow.com,multi-sport,Various,manual_research
+Sports Tak,Youtube,Multi-Sport,India,2000000,Hindi sports news channel,https://youtube.com/sportstakofficial,multi-sport,Various,manual_research
+Sportskeeda Community,Web Forum,Multi-Sport,Global,1500000,Sports news & community,https://sportskeeda.com,multi-sport,Various,manual_research
