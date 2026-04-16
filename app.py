@@ -10,6 +10,18 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
+# Auto-build ChromaDB on first launch (Streamlit Cloud has no persistent disk)
+CHROMA_DIR = "./chroma_db"
+if not os.path.exists(CHROMA_DIR) or len(os.listdir(CHROMA_DIR)) == 0:
+    import streamlit as st
+    with st.spinner("⚙️ First launch — building knowledge base (~30 sec)..."):
+        import sys
+        sys.path.insert(0, "./rag")       # adjust if ingest.py is in a subfolder
+        from ingest import main as ingest_main
+        ingest_main(data_dir="./data")
+    st.success("✅ Knowledge base ready!")
+    st.rerun()
+
 from validator import validate_and_normalise, ValidationError, print_supported_options
 from config import SUPPORTED_SPORTS, SUPPORTED_GEOGRAPHIES
 from orchestrator import run_pipeline
