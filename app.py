@@ -355,6 +355,44 @@ if run_btn:
     status.update(label="✅ Plan generated!", state="complete")
 
 
+# ── Helper: extract section from full report ──────────────────────────────────
+def extract_report_section(final_plan: str, keywords: list[str]) -> str:
+    """
+    Scans the full-report markdown for a heading whose text matches any of the
+    given keywords (case-insensitive) and returns all lines up to the next
+    same-level (or higher-level) heading.  Returns an empty string if nothing
+    is found.
+    """
+    if not final_plan:
+        return ""
+
+    lines = final_plan.splitlines()
+    start_idx = None
+    heading_level = 0
+
+    for i, line in enumerate(lines):
+        stripped = line.lstrip("#").strip().lower()
+        if line.startswith("#"):
+            level = len(line) - len(line.lstrip("#"))
+            if any(kw.lower() in stripped for kw in keywords):
+                start_idx = i
+                heading_level = level
+                break
+
+    if start_idx is None:
+        return ""
+
+    section_lines = [lines[start_idx]]
+    for line in lines[start_idx + 1:]:
+        if line.startswith("#"):
+            level = len(line) - len(line.lstrip("#"))
+            if level <= heading_level:
+                break
+        section_lines.append(line)
+
+    return "\n".join(section_lines).strip()
+
+
 # ── Render results ─────────────────────────────────────────────────────────────
 if "state" in st.session_state:
     state      = st.session_state["state"]
@@ -367,6 +405,7 @@ if "state" in st.session_state:
     exhibitors  = state.get("exhibitors")  or []
     communities = state.get("communities") or {}
     ops_plan    = state.get("ops_plan")    or {}
+    final_plan  = state.get("final_plan")  or ""
 
     # ── Top metrics ──────────────────────────────────────────────────────────
     tiers = pricing.get("pricing_tiers", [])
@@ -404,7 +443,12 @@ if "state" in st.session_state:
                 </div>
                 """, unsafe_allow_html=True)
         else:
-            st.info("No sponsor data returned.")
+            section = extract_report_section(final_plan, ["sponsor"])
+            if section:
+                st.info("ℹ️ No structured sponsor data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No sponsor data returned.")
 
     # ── SPEAKERS ──────────────────────────────────────────────────────────────
     with tabs[1]:
@@ -423,7 +467,12 @@ if "state" in st.session_state:
                     </div>
                     """, unsafe_allow_html=True)
         else:
-            st.info("No speaker data returned.")
+            section = extract_report_section(final_plan, ["speaker"])
+            if section:
+                st.info("ℹ️ No structured speaker data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No speaker data returned.")
 
     # ── VENUES ────────────────────────────────────────────────────────────────
     with tabs[2]:
@@ -447,7 +496,12 @@ if "state" in st.session_state:
                 </div>
                 """, unsafe_allow_html=True)
         else:
-            st.info("No venue data returned.")
+            section = extract_report_section(final_plan, ["venue"])
+            if section:
+                st.info("ℹ️ No structured venue data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No venue data returned.")
 
     # ── PRICING ───────────────────────────────────────────────────────────────
     with tabs[3]:
@@ -473,7 +527,12 @@ if "state" in st.session_state:
             st.markdown(f"**Model Confidence:** `{conf}`")
             st.caption(pricing.get("reasoning",""))
         else:
-            st.info("No pricing data returned.")
+            section = extract_report_section(final_plan, ["pricing", "ticket", "price"])
+            if section:
+                st.info("ℹ️ No structured pricing data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No pricing data returned.")
 
     # ── EXHIBITORS ────────────────────────────────────────────────────────────
     with tabs[4]:
@@ -490,7 +549,12 @@ if "state" in st.session_state:
                 </div>
                 """, unsafe_allow_html=True)
         else:
-            st.info("No exhibitor data returned.")
+            section = extract_report_section(final_plan, ["exhibitor"])
+            if section:
+                st.info("ℹ️ No structured exhibitor data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No exhibitor data returned.")
 
     # ── GTM ───────────────────────────────────────────────────────────────────
     with tabs[5]:
@@ -529,6 +593,14 @@ if "state" in st.session_state:
                 </div>
                 """, unsafe_allow_html=True)
 
+        if not gtm and not target_comms:
+            section = extract_report_section(final_plan, ["gtm", "go-to-market", "community", "marketing"])
+            if section:
+                st.info("ℹ️ No structured GTM data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No GTM data returned.")
+
     # ── SCHEDULE ──────────────────────────────────────────────────────────────
     with tabs[6]:
         agenda = ops_plan.get("agenda", [])
@@ -557,16 +629,20 @@ if "state" in st.session_state:
                 for item in res.get("equipment_checklist", []):
                     col3.markdown(f"- {item}")
         else:
-            st.info("No schedule data returned.")
+            section = extract_report_section(final_plan, ["schedule", "agenda", "program", "ops"])
+            if section:
+                st.info("ℹ️ No structured schedule data was returned. Showing recommendations from the full report:")
+                st.markdown(section)
+            else:
+                st.info("No schedule data returned.")
 
     # ── FULL REPORT ───────────────────────────────────────────────────────────
     with tabs[7]:
-        final = state.get("final_plan","")
-        if final:
-            st.markdown(final)
+        if final_plan:
+            st.markdown(final_plan)
             st.download_button(
                 label="⬇️ Download Full Report (.md)",
-                data=final.encode("utf-8"),
+                data=final_plan.encode("utf-8"),
                 file_name=f"{event_name.replace(' ','_')}_plan.md",
                 mime="text/markdown",
             )

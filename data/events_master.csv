@@ -1350,3 +1350,36 @@ West Ham United vs Wolverhampton Wanderers,2026-04-10,Premier League,Premier Lea
 Real Madrid vs Girona,2026-04-10,La Liga,La Liga,Real Madrid,Girona,Santiago Bernabéu,Madrid,Spain,Upcoming,espn
 AS Roma vs Pisa,2026-04-10,Serie A,Serie A,AS Roma,Pisa,Olimpico,Roma,Italy,Upcoming,espn
 FC Augsburg vs TSG Hoffenheim,2026-04-10,Bundesliga,Bundesliga,FC Augsburg,TSG Hoffenheim,WWK Arena,Augsburg,Germany,Upcoming,espn
+T20 World Cup 2007,2007-01-01,cricket,T20 World Cup,India,Pakistan,,,South Africa,Historical,new_data_2026
+T20 World Cup 2009,2009-01-01,cricket,T20 World Cup,Pakistan,Sri Lanka,,,England,Historical,new_data_2026
+T20 World Cup 2010,2010-01-01,cricket,T20 World Cup,England,Australia,,,West Indies,Historical,new_data_2026
+T20 World Cup 2012,2012-01-01,cricket,T20 World Cup,West Indies,Sri Lanka,,,Sri Lanka,Historical,new_data_2026
+T20 World Cup 2014,2014-01-01,cricket,T20 World Cup,Sri Lanka,India,,,Bangladesh,Historical,new_data_2026
+T20 World Cup 2016,2016-01-01,cricket,T20 World Cup,West Indies,England,,,India,Historical,new_data_2026
+T20 World Cup 2021,2021-01-01,cricket,T20 World Cup,Australia,New Zealand,,,UAE/Oman,Historical,new_data_2026
+T20 World Cup 2022,2022-01-01,cricket,T20 World Cup,England,Pakistan,,,Australia,Historical,new_data_2026
+T20 World Cup 2024,2024-01-01,cricket,T20 World Cup,India,South Africa,,,USA/West Indies,Historical,new_data_2026
+T20 World Cup 2026,2026-01-01,cricket,T20 World Cup,TBD,TBD,,,India/Sri Lanka,Historical,new_data_2026
+ODI World Cup 1975,1975-01-01,cricket,ODI World Cup,West Indies,Australia,,,England,Historical,new_data_2026
+ODI World Cup 1979,1979-01-01,cricket,ODI World Cup,West Indies,England,,,England,Historical,new_data_2026
+ODI World Cup 1983,1983-01-01,cricket,ODI World Cup,India,West Indies,,,England,Historical,new_data_2026
+ODI World Cup 1987,1987-01-01,cricket,ODI World Cup,Australia,England,,,India/Pakistan,Historical,new_data_2026
+ODI World Cup 1992,1992-01-01,cricket,ODI World Cup,Pakistan,England,,,Australia/New Zealand,Historical,new_data_2026
+ODI World Cup 1996,1996-01-01,cricket,ODI World Cup,Sri Lanka,Australia,,,India/Pakistan/Sri Lanka,Historical,new_data_2026
+ODI World Cup 1999,1999-01-01,cricket,ODI World Cup,Australia,Pakistan,,,England/Scotland/Ireland/Netherlands/Wales,Historical,new_data_2026
+ODI World Cup 2003,2003-01-01,cricket,ODI World Cup,Australia,India,,,South Africa/Zimbabwe/Kenya,Historical,new_data_2026
+ODI World Cup 2007,2007-01-01,cricket,ODI World Cup,Australia,Sri Lanka,,,West Indies,Historical,new_data_2026
+ODI World Cup 2011,2011-01-01,cricket,ODI World Cup,India,Sri Lanka,,,India/Sri Lanka/Bangladesh,Historical,new_data_2026
+ODI World Cup 2015,2015-01-01,cricket,ODI World Cup,Australia,New Zealand,,,Australia/New Zealand,Historical,new_data_2026
+ODI World Cup 2019,2019-01-01,cricket,ODI World Cup,England,New Zealand,,,England/Wales,Historical,new_data_2026
+ODI World Cup 2023,2023-01-01,cricket,ODI World Cup,Australia,India,,,India,Historical,new_data_2026
+ODI World Cup 2027,2027-01-01,cricket,ODI World Cup,TBD,TBD,,,South Africa/Zimbabwe/Namibia,Historical,new_data_2026
+Kabaddi World Cup 2004,2004-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2007,2007-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2010,2010-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2011,2011-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2012,2012-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2013,2013-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2014,2014-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2016,2016-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026
+Kabaddi World Cup 2019,2019-01-01,kabaddi,Kabaddi World Cup,India,Iran,,,India,Historical,new_data_2026

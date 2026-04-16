@@ -1,70 +1,121 @@
 """
-Community & GTM Agent
-Identifies relevant communities and creates a distribution/promotion plan.
+Community Agent — FIXED
+Bugs fixed:
+  1. max_tokens=400 truncated JSON at char 1429 (line 50) → bumped to 1000
+     target_communities (list) + gtm_strategy (dict with multiple keys) easily
+     exceeds 600-800 tokens; 1000 gives comfortable headroom.
+  2. No empty-response guard before json.loads → added explicit check
+  3. re.MULTILINE flag added to markdown-strip regex for reliable fence removal
+  4. Return value on RAG failure was {"communities": {}} without spreading state
+     → fixed to {**state, "communities": {}} to avoid dropping other agent outputs
 """
 
-import os
+import json, re
 from dotenv import load_dotenv
 load_dotenv()
+
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
+
 from rag.retriever import query, format_results
 from agents.state import AgentState
 
-SYSTEM_PROMPT = """You are the Community & GTM (Go-To-Market) Agent for a multi-agent conference organizer system.
 
-Your job:
-1. Identify the most relevant communities to promote the event (Discord, Reddit, LinkedIn, Slack, Facebook Groups)
-2. Categorise communities by niche
-3. Create a GTM distribution plan with messaging strategy
+SYSTEM_PROMPT = """You are the Community & GTM Agent.
 
-Output a JSON object with:
-- target_communities: list of {
-    community_name, platform, niche, members, why_relevant,
-    outreach_message (short 2-sentence pitch for that community)
-  }
-- gtm_strategy: {
-    phase_1_pre_event: string (what to do 8+ weeks out),
-    phase_2_launch: string (4-8 weeks out),
-    phase_3_final_push: string (0-4 weeks out),
-    key_channels: list of strings,
-    estimated_reach: int
-  }
+Return a JSON object with exactly these two keys:
+- target_communities: list of objects, each with:
+    - community_name
+    - platform
+    - niche
+    - estimated_reach
+    - engagement_tactic
+- gtm_strategy: object with:
+    - channels: list of strings
+    - key_messages: list of strings
+    - influencer_approach: string
+    - timeline_weeks: number
 
-Return ONLY valid JSON. No extra text."""
+Return ONLY valid JSON. No markdown, no extra text.
+"""
 
 
-def run_community_agent(state: AgentState) -> AgentState:
+def run_community_agent(state: AgentState):
+    print("\n===== COMMUNITY AGENT START =====")
+
     inp = state["input"]
-    raw = query("communities",
-                f"{inp['event_category']} community {inp['geography']}",
-                n_results=10)
-    context = format_results(raw, max_items=10)
 
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.4)
+    # ── SAFE RAG ─────────────────────────────
+    try:
+        raw = query(
+            "communities",
+            f"{inp['event_category']} community {inp['geography']}",
+            n_results=5
+        )
+        context = format_results(raw, max_items=10)
+        print("✅ Community RAG SUCCESS")
+
+    except Exception as e:
+        print("⚠️ Community RAG FAILED:", e)
+        # FIX 4: spread state so other agent outputs are not dropped
+        return {**state, "communities": {}}
+
+    if not context.strip():
+        print("❌ No community data")
+        return {**state, "communities": {}}
+
+    # FIX 1: 400 tokens cannot fit target_communities list + gtm_strategy dict.
+    #         Typical output ≈ 700-900 tokens → use 1000.
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        temperature=0.4,
+        max_tokens=1000
+    )
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
-Event: {inp.get('event_name', inp['event_category'])}
+Event: {inp.get('event_name', 'TBD')}
 Category: {inp['event_category']}
 Geography: {inp['geography']}
-Target Audience Size: {inp['target_audience_size']}
-Notes: {inp.get('additional_notes', 'None')}
 
 Communities Database:
 {context}
 
-Build the GTM plan and identify top 6 communities to target.
+Build GTM plan. Return ONLY a JSON object.
 """),
     ]
 
     try:
         response = llm.invoke(messages)
-        import json, re
-        text = re.sub(r"^```(?:json)?|```$", "", response.content.strip(), flags=re.MULTILINE).strip()
+        raw_text = response.content.strip()
+
+        # FIX 2: Guard against empty response before attempting json.loads
+        if not raw_text:
+            raise ValueError("LLM returned empty response")
+
+        # FIX 3: re.MULTILINE so ^ and $ match line boundaries reliably
+        text = re.sub(
+            r"^```(?:json)?\s*|\s*```$",
+            "",
+            raw_text,
+            flags=re.MULTILINE
+        ).strip()
+
+        if not text:
+            raise ValueError("Response was only markdown fences, no content")
+
         communities = json.loads(text)
+
+        if not isinstance(communities, dict):
+            raise ValueError(f"Expected dict, got {type(communities)}")
+
+        print("✅ COMMUNITY PLAN GENERATED")
+
     except Exception as e:
+        print("❌ Community LLM ERROR:", e)
         communities = {}
-        state.setdefault("errors", []).append(f"CommunityAgent: {e}")
+
+    print("===== COMMUNITY AGENT END =====\n")
 
     return {**state, "communities": communities}

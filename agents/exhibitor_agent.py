@@ -1,58 +1,100 @@
-"""
-Exhibitor Agent — identifies companies to exhibit at the event
-"""
+"""Exhibitor Agent — FINAL (RAG + CSV fallback + SAFE)"""
 
-import os
+import json, re
 from dotenv import load_dotenv
 load_dotenv()
+
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
-from rag.retriever import query, format_results
+
+from rag.retriever import query
+from rag.csv_fallback import get_context
 from agents.state import AgentState
 
-SYSTEM_PROMPT = """You are the Exhibitor Agent for a multi-agent conference organizer system.
 
-Recommend companies that should exhibit at this event. Cluster them by:
-- startup / enterprise / tools / individual / NGO
+SYSTEM_PROMPT = """You are the Exhibitor Agent.
 
-Output a JSON list with fields:
+Recommend real companies from the data.
+
+Return JSON list:
 - company_name
-- category (startup / enterprise / tools / individual / NGO)
-- sub_category (e.g. Wearables, Analytics, Broadcasting)
+- category
+- sub_category
 - geography
-- why_good_fit (1 sentence)
-- booth_tier (Premium / Standard / Startup Booth)
+- why_good_fit
+- booth_tier
 
-Return ONLY valid JSON. No extra text."""
+Return ONLY JSON.
+"""
 
 
-def run_exhibitor_agent(state: AgentState) -> AgentState:
+def run_exhibitor_agent(state: AgentState):
+    print("\n===== EXHIBITOR AGENT START =====")
+
     inp = state["input"]
-    raw = query("exhibitors", f"{inp['event_category']} {inp['geography']}", n_results=10)
-    context = format_results(raw, max_items=10)
+    sport = inp["event_category"]
+    geo = inp["geography"]
 
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.2)
+    context = ""
+
+    # ── SAFE RAG ─────────────────────────────
+    try:
+        raw = query("exhibitors", f"{sport} {geo}", n_results=5)
+        context = get_context("exhibitors", raw, sport, geo)
+        print("✅ Exhibitor RAG SUCCESS")
+
+    except Exception as e:
+        print("⚠️ Exhibitor RAG FAILED:", e)
+        return {"exhibitors": []}   # ✅ prevent crash
+
+    # If no data → skip LLM
+    if not context.strip():
+        print("❌ No exhibitor data found")
+        return {"exhibitors": []}
+
+    # ── LLM ─────────────────────────────
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        temperature=0.2,
+        max_tokens=400   # ✅ avoid rate limit
+    )
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
-Event: {inp.get('event_name', inp['event_category'])}
-Geography: {inp['geography']}
-Audience Size: {inp['target_audience_size']}
+Event: {inp.get('event_name','TBD')}
+Sport: {sport}
+Geography: {geo}
+Audience: {inp['target_audience_size']}
 
 Exhibitors Database:
 {context}
 
-Recommend top 8 exhibitors, clustered by category.
+Recommend top exhibitors using ONLY real company names.
 """),
     ]
 
     try:
         response = llm.invoke(messages)
-        import json, re
-        text = re.sub(r"^```(?:json)?|```$", "", response.content.strip(), flags=re.MULTILINE).strip()
+
+        text = re.sub(
+            r"^```(?:json)?\s*|\s*```$",
+            "",
+            response.content.strip(),
+            flags=re.MULTILINE
+        ).strip()
+
         exhibitors = json.loads(text)
+
+        if not isinstance(exhibitors, list):
+            raise ValueError("Invalid exhibitor output")
+
+        print(f"✅ EXHIBITORS GENERATED: {len(exhibitors)}")
+
     except Exception as e:
+        print("❌ Exhibitor LLM ERROR:", e)
         exhibitors = []
-        state.setdefault("errors", []).append(f"ExhibitorAgent: {e}")
+
+    print("===== EXHIBITOR AGENT END =====\n")
 
     return {**state, "exhibitors": exhibitors}

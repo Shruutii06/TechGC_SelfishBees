@@ -1,75 +1,107 @@
-"""
-Pricing & Footfall Agent
-Predicts optimal ticket pricing and expected attendance.
-"""
+"""Pricing Agent — FINAL (RAG + CSV fallback + SAFE)"""
 
-import os
+import json, re
 from dotenv import load_dotenv
 load_dotenv()
+
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
-from rag.retriever import query, format_results
+
+from rag.retriever import query
+from rag.csv_fallback import get_context, attendance_fallback
 from agents.state import AgentState
 
-SYSTEM_PROMPT = """You are the Pricing & Footfall Agent for a multi-agent conference organizer system.
 
-Your job:
-1. Predict optimal ticket pricing tiers
-2. Estimate expected attendance
-3. Model the relationship between price and conversion
-4. Project revenue and break-even
+SYSTEM_PROMPT = """You are the Pricing & Footfall Agent.
 
-Use historical event data provided to benchmark your predictions.
+Use the given pricing benchmarks and attendance data.
 
-Output a single JSON object with:
-- pricing_tiers: list of {tier_name, price_usd, expected_sales, revenue_est_usd}
-  (tiers: Early Bird, Standard, VIP, Online/Virtual)
-- total_expected_attendance: int
-- total_revenue_projection_usd: float
-- break_even_attendance: int (rough estimate)
-- confidence: High / Medium / Low
-- reasoning: 2-3 sentences explaining the model
+Return JSON:
+- pricing_tiers
+- total_expected_attendance
+- total_revenue_projection_usd
+- break_even_attendance
+- confidence
+- reasoning
 
-Return ONLY valid JSON. No extra text."""
+Return ONLY JSON.
+"""
 
 
-def run_pricing_agent(state: AgentState) -> AgentState:
+def run_pricing_agent(state: AgentState):
+    print("\n===== PRICING AGENT START =====")
+
     inp = state["input"]
-    raw = query("ticket_pricing",
-                f"{inp['event_category']} {inp['geography']} ticket price attendance",
-                n_results=10)
-    context = format_results(raw, max_items=10)
+    sport = inp["event_category"]
+    geo = inp["geography"]
 
-    # Also pull Olympics data for large-scale benchmarks
-    olym = query("olympics", f"attendance athletes {inp['geography']}", n_results=3)
-    olym_ctx = format_results(olym, max_items=3)
+    context = ""
 
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.1)
+    # ── SAFE RAG ─────────────────────────────
+    try:
+        raw = query("ticket_pricing", f"{sport} {geo} ticket price attendance", n_results=5)
+        context = get_context("ticket_pricing", raw, sport, geo)
+        print("✅ Pricing RAG SUCCESS")
+
+    except Exception as e:
+        print("⚠️ Pricing RAG FAILED:", e)
+        context = ""
+
+    # Attendance fallback always works
+    att_ctx = attendance_fallback(sport)
+
+    # If BOTH empty → return safely
+    if not context.strip() and not att_ctx.strip():
+        print("❌ No pricing data available")
+        return {"pricing": {}}
+
+    # ── LLM ─────────────────────────────
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        temperature=0.1,
+        max_tokens=400   # ✅ prevent rate limit blowups
+    )
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
-Event: {inp.get('event_name', inp['event_category'])}
-Geography: {inp['geography']}
-Target Audience Size: {inp['target_audience_size']}
-Budget: {inp.get('budget_usd', 'Not specified')} USD
+Event: {inp.get('event_name','TBD')}
+Sport: {sport}
+Geography: {geo}
+Target Audience: {inp['target_audience_size']}
+Budget: {inp.get('budget_usd','Not specified')} USD
 
-Historical Pricing Benchmarks:
+Ticket Pricing Benchmarks:
 {context}
 
-Large-Scale Event Reference:
-{olym_ctx}
+Historical Attendance Data:
+{att_ctx}
 
-Generate the pricing model.
+Generate pricing model.
 """),
     ]
 
     try:
         response = llm.invoke(messages)
-        import json, re
-        text = re.sub(r"^```(?:json)?|```$", "", response.content.strip(), flags=re.MULTILINE).strip()
+
+        text = re.sub(
+            r"^```(?:json)?\s*|\s*```$",
+            "",
+            response.content.strip(),
+            flags=re.MULTILINE
+        ).strip()
+
         pricing = json.loads(text)
+
+        if not isinstance(pricing, dict):
+            raise ValueError("Invalid pricing output")
+
+        print("✅ PRICING GENERATED")
+
     except Exception as e:
+        print("❌ Pricing LLM ERROR:", e)
         pricing = {}
-        state.setdefault("errors", []).append(f"PricingAgent: {e}")
+
+    print("===== PRICING AGENT END =====\n")
 
     return {**state, "pricing": pricing}

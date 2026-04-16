@@ -1,103 +1,132 @@
-event_league,league_code,sponsor_name,sponsor_type,deal_amount,source
-Nfl,nfl,Nike,Official Apparel,$1.1B/5yr,public_records
-Nfl,nfl,Pepsi,Official Beverage,Undisclosed,public_records
-Nfl,nfl,Microsoft,Official Technology,$400M/5yr,public_records
-Nfl,nfl,Verizon,Official Telecom,$2.5B/5yr,public_records
-Nfl,nfl,FedEx,Delivery Partner,Undisclosed,public_records
-Nfl,nfl,Bose,Official Audio,Undisclosed,public_records
-Nfl,nfl,Gatorade,Official Sports Drink,Undisclosed,public_records
-Nba,nba,Nike,Official Apparel,$1B/8yr,public_records
-Nba,nba,Microsoft,Official Ai Partner,Undisclosed,public_records
-Nba,nba,Google,Official Search Partner,Undisclosed,public_records
-Nba,nba,Tissot,Official Timekeeper,Undisclosed,public_records
-Nba,nba,Gatorade,Official Sports Drink,Undisclosed,public_records
-Nba,nba,Kia,Official Automotive,Undisclosed,public_records
-Premier League,eng.1,Nike,Official Ball Supplier,Undisclosed,public_records
-Premier League,eng.1,Barclays,Title Sponsor,$40M/yr,public_records
-Premier League,eng.1,EA Sports,Official Gaming Partner,Undisclosed,public_records
-Premier League,eng.1,Cadbury,Official Snack Partner,Undisclosed,public_records
-Premier League,eng.1,Carling,Official Beer Partner,Undisclosed,public_records
-Ipl,icc.cricket,Tata Group,Title Sponsor,$306M/5yr,public_records
-Ipl,icc.cricket,Dream11,Official Fantasy Partner,Undisclosed,public_records
-Ipl,icc.cricket,CEAT,Strategic Timeout Partner,Undisclosed,public_records
-Ipl,icc.cricket,Disney+Hotstar,Streaming Partner,$3B/5yr,public_records
-Ipl,icc.cricket,MRF,Official Bat Sponsor,Undisclosed,public_records
-Ipl,icc.cricket,PhonePe,Official Payment Partner,Undisclosed,public_records
-Formula 1,formula1,Rolex,Official Timekeeper,Undisclosed,public_records
-Formula 1,formula1,Heineken,Official Beer Partner,$100M/yr,public_records
-Formula 1,formula1,DHL,Official Logistics,Undisclosed,public_records
-Formula 1,formula1,AWS,Official Cloud Partner,Undisclosed,public_records
-Formula 1,formula1,Pirelli,Official Tyre Supplier,Undisclosed,public_records
-Mlb,mlb,Nike,Official Apparel,$150M/10yr,public_records
-Mlb,mlb,Chevrolet,Official Automotive,Undisclosed,public_records
-Mlb,mlb,Mastercard,Official Payment,Undisclosed,public_records
-Mlb,mlb,T-Mobile,Official Telecom,Undisclosed,public_records
-Nhl,nhl,Adidas,Official Apparel,Undisclosed,public_records
-Nhl,nhl,Enterprise,Official Car Rental,Undisclosed,public_records
-Nhl,nhl,Discover,Official Card,Undisclosed,public_records
-Champions League,champions_league,Heineken,Title Sponsor,Undisclosed,public_records
-Champions League,champions_league,Mastercard,Official Partner,Undisclosed,public_records
-Champions League,champions_league,PlayStation,Official Partner,Undisclosed,public_records
-Champions League,champions_league,PepsiCo,Official Beverage,Undisclosed,public_records
-Ufc,ufc,Modelo,Official Beer,$175M/7yr,public_records
-Ufc,ufc,DraftKings,Official Betting,Undisclosed,public_records
-Ufc,ufc,Crypto.com,Official Crypto,Undisclosed,public_records
-Ufc,ufc,Toyo Tires,Official Tyre,Undisclosed,public_records
-La Liga,esp.1,EA Sports,Title Sponsor,Undisclosed,public_records
-La Liga,esp.1,Santander,Official Banking,Undisclosed,public_records
-Bundesliga,ger.1,Deutsche Telekom,Title Sponsor,Undisclosed,public_records
-Bundesliga,ger.1,Adidas,Official Apparel,Undisclosed,public_records
-Football,,M&T Bank,Naming Rights,,venue_name_analysis
-Football,,Acrisure,Naming Rights,,venue_name_analysis
-"Football, Soccer",,Mercedes-Benz,Naming Rights,,venue_name_analysis
-Football,,AT&T,Naming Rights,,venue_name_analysis
-Football,,Lambeau,Naming Rights,,venue_name_analysis
-Football,,Nissan,Naming Rights,,venue_name_analysis
-Football,,Lucas Oil,Naming Rights,,venue_name_analysis
-"Football, Soccer",,Gillette,Naming Rights,,venue_name_analysis
-Football,,Lincoln,Naming Rights,,venue_name_analysis
-Football,,Raymond James,Naming Rights,,venue_name_analysis
-Football,,Empower,Naming Rights,,venue_name_analysis
-Football,,Allegiant,Naming Rights,,venue_name_analysis
-Football,,SoFi,Naming Rights,,venue_name_analysis
-Football,,MetLife,Naming Rights,,venue_name_analysis
-Football,,State Farm,Naming Rights,,venue_name_analysis
-Football,,Highmark,Naming Rights,,venue_name_analysis
-Football,,Arrowhead,Naming Rights,,venue_name_analysis
-Football,,Caesars,Naming Rights,,venue_name_analysis
-"Football, Soccer",,Bank of America,Naming Rights,,venue_name_analysis
-Football,,U.S. Bank,Naming Rights,,venue_name_analysis
-Football,,Levi's,Naming Rights,,venue_name_analysis
-"Football, Soccer",,Soldier,Naming Rights,,venue_name_analysis
-Football,,Paycor,Naming Rights,,venue_name_analysis
-Football,,Huntington,Naming Rights,,venue_name_analysis
-"Basketball, Hockey",,Caesars,Naming Rights,,venue_name_analysis
-Basketball,,Chase,Naming Rights,,venue_name_analysis
-"Basketball, Hockey",,Crypto.com,Naming Rights,,venue_name_analysis
-"Basketball, Hockey",,American,Naming Rights,,venue_name_analysis
-Basketball,,Barclays,Naming Rights,,venue_name_analysis
-"Basketball, Hockey, Mma",,United,Naming Rights,,venue_name_analysis
-Basketball,,FedEx,Naming Rights,,venue_name_analysis
-"Basketball, Mma",,State Farm,Naming Rights,,venue_name_analysis
-Baseball,,American,Naming Rights,,venue_name_analysis
-Baseball,,Fenway,Naming Rights,,venue_name_analysis
-Hockey,,SAP,Naming Rights,,venue_name_analysis
-Soccer,,Tottenham,Naming Rights,,venue_name_analysis
-Soccer,,Etihad,Naming Rights,,venue_name_analysis
-Soccer,,American,Naming Rights,,venue_name_analysis
-Soccer,,Anfield,Naming Rights,,venue_name_analysis
-Soccer,,Stamford,Naming Rights,,venue_name_analysis
-Soccer,,Emirates,Naming Rights,,venue_name_analysis
-Soccer,,Old Trafford,Naming Rights,,venue_name_analysis
-Soccer,,Signal Iduna,Naming Rights,,venue_name_analysis
-Soccer,,Red Bull,Naming Rights,,venue_name_analysis
-Soccer,,BayArena,Naming Rights,,venue_name_analysis
-Soccer,,Allianz,Naming Rights,,venue_name_analysis
-Soccer,,Chase,Naming Rights,,venue_name_analysis
-Mma,,Etihad,Naming Rights,,venue_name_analysis
-Mma,,Mercedes-Benz,Naming Rights,,venue_name_analysis
-Nhl,,Canada:Sportsnet+Amazon Prime VideoUnited States:ESPN+/Hulu[3]HBO Max[4],Streaming Partners,,wikipedia
-Eng.1,,"Since 2011, Lucas Oil has been a main sponsor",Mentioned In Text,,wikipedia_text
-Usa.1,,"""Premier League closes door on title sponsorship from 2016-17 season""",Mentioned In Text,,wikipedia_text
-Ind.1,,The TATA Group previously held the title sponsorship rights for the IPL in 2022,Mentioned In Text,,wikipedia_text
-Pga,,"""Valspar extends title sponsorship of PGA Tour's",Mentioned In Text,,wikipedia_text
+event_league,league_code,sponsor_name,sponsor_type,deal_amount,source,category,geography
+Nfl,nfl,Nike,Official Apparel,$1.1B/5yr,public_records,,
+Nfl,nfl,Pepsi,Official Beverage,Undisclosed,public_records,,
+Nfl,nfl,Microsoft,Official Technology,$400M/5yr,public_records,,
+Nfl,nfl,Verizon,Official Telecom,$2.5B/5yr,public_records,,
+Nfl,nfl,FedEx,Delivery Partner,Undisclosed,public_records,,
+Nfl,nfl,Bose,Official Audio,Undisclosed,public_records,,
+Nfl,nfl,Gatorade,Official Sports Drink,Undisclosed,public_records,,
+Nba,nba,Nike,Official Apparel,$1B/8yr,public_records,,
+Nba,nba,Microsoft,Official Ai Partner,Undisclosed,public_records,,
+Nba,nba,Google,Official Search Partner,Undisclosed,public_records,,
+Nba,nba,Tissot,Official Timekeeper,Undisclosed,public_records,,
+Nba,nba,Gatorade,Official Sports Drink,Undisclosed,public_records,,
+Nba,nba,Kia,Official Automotive,Undisclosed,public_records,,
+Premier League,eng.1,Nike,Official Ball Supplier,Undisclosed,public_records,,
+Premier League,eng.1,Barclays,Title Sponsor,$40M/yr,public_records,,
+Premier League,eng.1,EA Sports,Official Gaming Partner,Undisclosed,public_records,,
+Premier League,eng.1,Cadbury,Official Snack Partner,Undisclosed,public_records,,
+Premier League,eng.1,Carling,Official Beer Partner,Undisclosed,public_records,,
+Ipl,icc.cricket,Tata Group,Title Sponsor,$306M/5yr,public_records,,
+Ipl,icc.cricket,Dream11,Official Fantasy Partner,Undisclosed,public_records,,
+Ipl,icc.cricket,CEAT,Strategic Timeout Partner,Undisclosed,public_records,,
+Ipl,icc.cricket,Disney+Hotstar,Streaming Partner,$3B/5yr,public_records,,
+Ipl,icc.cricket,MRF,Official Bat Sponsor,Undisclosed,public_records,,
+Ipl,icc.cricket,PhonePe,Official Payment Partner,Undisclosed,public_records,,
+Formula 1,formula1,Rolex,Official Timekeeper,Undisclosed,public_records,,
+Formula 1,formula1,Heineken,Official Beer Partner,$100M/yr,public_records,,
+Formula 1,formula1,DHL,Official Logistics,Undisclosed,public_records,,
+Formula 1,formula1,AWS,Official Cloud Partner,Undisclosed,public_records,,
+Formula 1,formula1,Pirelli,Official Tyre Supplier,Undisclosed,public_records,,
+Mlb,mlb,Nike,Official Apparel,$150M/10yr,public_records,,
+Mlb,mlb,Chevrolet,Official Automotive,Undisclosed,public_records,,
+Mlb,mlb,Mastercard,Official Payment,Undisclosed,public_records,,
+Mlb,mlb,T-Mobile,Official Telecom,Undisclosed,public_records,,
+Nhl,nhl,Adidas,Official Apparel,Undisclosed,public_records,,
+Nhl,nhl,Enterprise,Official Car Rental,Undisclosed,public_records,,
+Nhl,nhl,Discover,Official Card,Undisclosed,public_records,,
+Champions League,champions_league,Heineken,Title Sponsor,Undisclosed,public_records,,
+Champions League,champions_league,Mastercard,Official Partner,Undisclosed,public_records,,
+Champions League,champions_league,PlayStation,Official Partner,Undisclosed,public_records,,
+Champions League,champions_league,PepsiCo,Official Beverage,Undisclosed,public_records,,
+Ufc,ufc,Modelo,Official Beer,$175M/7yr,public_records,,
+Ufc,ufc,DraftKings,Official Betting,Undisclosed,public_records,,
+Ufc,ufc,Crypto.com,Official Crypto,Undisclosed,public_records,,
+Ufc,ufc,Toyo Tires,Official Tyre,Undisclosed,public_records,,
+La Liga,esp.1,EA Sports,Title Sponsor,Undisclosed,public_records,,
+La Liga,esp.1,Santander,Official Banking,Undisclosed,public_records,,
+Bundesliga,ger.1,Deutsche Telekom,Title Sponsor,Undisclosed,public_records,,
+Bundesliga,ger.1,Adidas,Official Apparel,Undisclosed,public_records,,
+Football,,M&T Bank,Naming Rights,,venue_name_analysis,,
+Football,,Acrisure,Naming Rights,,venue_name_analysis,,
+"Football, Soccer",,Mercedes-Benz,Naming Rights,,venue_name_analysis,,
+Football,,AT&T,Naming Rights,,venue_name_analysis,,
+Football,,Lambeau,Naming Rights,,venue_name_analysis,,
+Football,,Nissan,Naming Rights,,venue_name_analysis,,
+Football,,Lucas Oil,Naming Rights,,venue_name_analysis,,
+"Football, Soccer",,Gillette,Naming Rights,,venue_name_analysis,,
+Football,,Lincoln,Naming Rights,,venue_name_analysis,,
+Football,,Raymond James,Naming Rights,,venue_name_analysis,,
+Football,,Empower,Naming Rights,,venue_name_analysis,,
+Football,,Allegiant,Naming Rights,,venue_name_analysis,,
+Football,,SoFi,Naming Rights,,venue_name_analysis,,
+Football,,MetLife,Naming Rights,,venue_name_analysis,,
+Football,,State Farm,Naming Rights,,venue_name_analysis,,
+Football,,Highmark,Naming Rights,,venue_name_analysis,,
+Football,,Arrowhead,Naming Rights,,venue_name_analysis,,
+Football,,Caesars,Naming Rights,,venue_name_analysis,,
+"Football, Soccer",,Bank of America,Naming Rights,,venue_name_analysis,,
+Football,,U.S. Bank,Naming Rights,,venue_name_analysis,,
+Football,,Levi's,Naming Rights,,venue_name_analysis,,
+"Football, Soccer",,Soldier,Naming Rights,,venue_name_analysis,,
+Football,,Paycor,Naming Rights,,venue_name_analysis,,
+Football,,Huntington,Naming Rights,,venue_name_analysis,,
+"Basketball, Hockey",,Caesars,Naming Rights,,venue_name_analysis,,
+Basketball,,Chase,Naming Rights,,venue_name_analysis,,
+"Basketball, Hockey",,Crypto.com,Naming Rights,,venue_name_analysis,,
+"Basketball, Hockey",,American,Naming Rights,,venue_name_analysis,,
+Basketball,,Barclays,Naming Rights,,venue_name_analysis,,
+"Basketball, Hockey, Mma",,United,Naming Rights,,venue_name_analysis,,
+Basketball,,FedEx,Naming Rights,,venue_name_analysis,,
+"Basketball, Mma",,State Farm,Naming Rights,,venue_name_analysis,,
+Baseball,,American,Naming Rights,,venue_name_analysis,,
+Baseball,,Fenway,Naming Rights,,venue_name_analysis,,
+Hockey,,SAP,Naming Rights,,venue_name_analysis,,
+Soccer,,Tottenham,Naming Rights,,venue_name_analysis,,
+Soccer,,Etihad,Naming Rights,,venue_name_analysis,,
+Soccer,,American,Naming Rights,,venue_name_analysis,,
+Soccer,,Anfield,Naming Rights,,venue_name_analysis,,
+Soccer,,Stamford,Naming Rights,,venue_name_analysis,,
+Soccer,,Emirates,Naming Rights,,venue_name_analysis,,
+Soccer,,Old Trafford,Naming Rights,,venue_name_analysis,,
+Soccer,,Signal Iduna,Naming Rights,,venue_name_analysis,,
+Soccer,,Red Bull,Naming Rights,,venue_name_analysis,,
+Soccer,,BayArena,Naming Rights,,venue_name_analysis,,
+Soccer,,Allianz,Naming Rights,,venue_name_analysis,,
+Soccer,,Chase,Naming Rights,,venue_name_analysis,,
+Mma,,Etihad,Naming Rights,,venue_name_analysis,,
+Mma,,Mercedes-Benz,Naming Rights,,venue_name_analysis,,
+Nhl,,Canada:Sportsnet+Amazon Prime VideoUnited States:ESPN+/Hulu[3]HBO Max[4],Streaming Partners,,wikipedia,,
+Eng.1,,"Since 2011, Lucas Oil has been a main sponsor",Mentioned In Text,,wikipedia_text,,
+Usa.1,,"""Premier League closes door on title sponsorship from 2016-17 season""",Mentioned In Text,,wikipedia_text,,
+Ind.1,,The TATA Group previously held the title sponsorship rights for the IPL in 2022,Mentioned In Text,,wikipedia_text,,
+Pga,,"""Valspar extends title sponsorship of PGA Tour's",Mentioned In Text,,wikipedia_text,,
+IPL,IPL,Tata Group,Title Sponsor,,new_data_2026,Conglomerate,India
+IPL,IPL,Dream11,Official Partner,,new_data_2026,Fantasy Sports,India
+IPL,IPL,Cred,Official Partner,,new_data_2026,Fintech,India
+IPL,IPL,Swiggy Instamart,Official Partner,,new_data_2026,Quick Commerce,India
+IPL,IPL,RuPay,Official Partner,,new_data_2026,Payments,India
+IPL,IPL,Star Sports / JioCinema,Broadcast Partner,,new_data_2026,Media,India
+IPL,IPL,PayTM,Official Partner,,new_data_2026,Fintech,India
+IPL,IPL,Pepsi,Official Partner,,new_data_2026,FMCG Beverages,Global
+IPL,IPL,D-Mart,Official Partner,,new_data_2026,Retail,India
+IPL,IPL,MRF Tyres,Official Partner,,new_data_2026,Automobile,India
+IPL,IPL,VIVO,Title Sponsor,,new_data_2026,Consumer Electronics,China/Global
+ODI World Cup,ODI World Cup,MRF Tyres,Global Partner,,new_data_2026,Automobile,India/Global
+ODI World Cup,ODI World Cup,Aramco,Global Partner,,new_data_2026,Energy,Saudi Arabia/Global
+ODI World Cup,ODI World Cup,Pepsi,Global Partner,,new_data_2026,Beverages,Global
+ODI World Cup,ODI World Cup,Booking.com,Official Partner,,new_data_2026,Travel Tech,Global
+ODI World Cup,ODI World Cup,Nissan,Official Partner,,new_data_2026,Automobile,Global
+ODI World Cup,ODI World Cup,Oppo,Official Partner,,new_data_2026,Consumer Electronics,China/Global
+ODI World Cup,ODI World Cup,DP World,Official Partner,,new_data_2026,Logistics/Shipping,UAE/Global
+ODI World Cup,ODI World Cup,Dream11,India Sponsor,,new_data_2026,Fantasy Sports,India
+ODI World Cup,ODI World Cup,Mastercard,India Sponsor,,new_data_2026,Payments,Global
+ODI World Cup,ODI World Cup,CRED,India Sponsor,,new_data_2026,Fintech,India
+ODI World Cup,ODI World Cup,Disney+ Hotstar / Star Sports,Broadcast,,new_data_2026,Media,India/Global
+PKL,PKL,Vedanta,Title Sponsor,,new_data_2026,Mining/Metals Conglomerate,India
+PKL,PKL,Dream11,Co-Presenter,,new_data_2026,Fantasy Sports,India
+PKL,PKL,Star Sports,Official Broadcast,,new_data_2026,Media,India
+PKL,PKL,Disney+ Hotstar,Official Broadcast,,new_data_2026,OTT/Media,India
+PKL,PKL,Thums Up (Coca-Cola),Official Partner,,new_data_2026,Beverages,India
+PKL,PKL,Haier,Official Partner,,new_data_2026,Consumer Electronics,China/India
+PKL,PKL,Vivo,Title Sponsor,,new_data_2026,Consumer Electronics,China/India

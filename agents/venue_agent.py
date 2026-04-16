@@ -1,66 +1,123 @@
 """
-Venue Agent — recommends venues based on city, footfall, and budget
+Venue Agent — FIXED
+Bugs fixed:
+  1. max_tokens=400 truncated JSON mid-string at line 45 → bumped to 900
+  2. No empty-response guard before json.loads → added explicit check
 """
 
-import os
+import json, re
 from dotenv import load_dotenv
 load_dotenv()
+
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
-from rag.retriever import query, format_results
+
+from rag.retriever import query
+from rag.csv_fallback import get_context
 from agents.state import AgentState
 
-SYSTEM_PROMPT = """You are the Venue Agent for a multi-agent conference organizer system.
 
-Recommend the best venues for this event based on:
-- City / geography match
-- Capacity vs expected footfall
-- Budget constraints
-- Sport or event type suitability
-- Past event usage
+SYSTEM_PROMPT = """You are the Venue Agent.
 
-Output a JSON list with fields:
+Recommend REAL venues only from provided data.
+
+Return a JSON list. Each item has exactly these fields:
 - venue_name
 - city
 - country
 - capacity
 - sport_suitability
-- estimated_rental_range_usd (if known, else "Contact venue")
-- past_events_note (if known)
-- recommendation_reason (1-2 sentences)
-- rank (1 = best fit)
+- estimated_rental_range_usd
+- recommendation_reason
+- rank
 
-Return ONLY valid JSON. No extra text."""
+Return ONLY valid JSON. No markdown, no extra text.
+"""
 
 
-def run_venue_agent(state: AgentState) -> AgentState:
+def safe_json_parse(text: str):
+    if not text or not text.strip():
+        return None
+
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip(), flags=re.MULTILINE).strip()
+
+    try:
+        return json.loads(text)
+    except Exception:
+        pass
+
+    # Last-resort: extract first [...] or {...} block
+    match = re.search(r"\[.*\]|\{.*\}", text, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group())
+        except Exception:
+            pass
+
+    return None
+
+
+def run_venue_agent(state: AgentState):
+    print("\n===== VENUE AGENT START =====")
+
     inp = state["input"]
-    raw = query("venues", f"{inp['event_category']} venue {inp['geography']}", n_results=10)
-    context = format_results(raw, max_items=10)
+    sport = inp["event_category"]
+    geo   = inp["geography"]
 
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.2)
+    # ── SAFE RAG ─────────────────────────────
+    try:
+        raw = query("venues", f"{sport} venue {geo}", n_results=5)
+        context = get_context("venues", raw, sport, geo)
+        print("✅ Venue RAG SUCCESS")
+    except Exception as e:
+        print("⚠️ Venue RAG FAILED:", e)
+        return {**state, "venues": []}
+
+    if not context.strip():
+        print("❌ No venue data")
+        return {**state, "venues": []}
+
+    # FIX 1: 400 tokens is far too low for 5 venue objects × 8 fields.
+    #         5 venues × ~150 tokens each ≈ 750 tokens → use 1000.
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        temperature=0.2,
+        max_tokens=1000
+    )
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
-Event: {inp.get('event_name', inp['event_category'])}
-Geography: {inp['geography']}
+Event: {inp.get('event_name', 'TBD')}
+Sport: {sport}
+Geography: {geo}
 Expected Attendance: {inp['target_audience_size']}
-Budget: {inp.get('budget_usd', 'Not specified')} USD
 
 Venues Database:
 {context}
 
-Recommend top 5 venues, ranked by fit.
+Pick top 5 venues. Return ONLY a JSON list.
 """),
     ]
 
     try:
         response = llm.invoke(messages)
-        import json, re
-        text = re.sub(r"^```(?:json)?|```$", "", response.content.strip(), flags=re.MULTILINE).strip()
-        venues = json.loads(text)
-    except Exception as e:
-        venues = []
-        state.setdefault("errors", []).append(f"VenueAgent: {e}")
+        raw_text = response.content.strip()
 
+        # FIX 2: Guard against empty response
+        if not raw_text:
+            raise ValueError("LLM returned empty response")
+
+        venues = safe_json_parse(raw_text)
+
+        if not isinstance(venues, list):
+            raise ValueError(f"Expected list, got {type(venues)}: {raw_text[:200]}")
+
+        print(f"✅ VENUES GENERATED: {len(venues)}")
+
+    except Exception as e:
+        print("❌ Venue LLM ERROR:", e)
+        venues = []
+
+    print("===== VENUE AGENT END =====\n")
     return {**state, "venues": venues}

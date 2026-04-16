@@ -9,180 +9,347 @@
   },
   "sponsors": [
     {
-      "sponsor_name": "Tata Group",
-      "sponsor_type": "Title Sponsor",
-      "relevance_reason": "The Tata Group previously held the title sponsorship rights for the IPL in 2022, making them a highly relevant sponsor for the IPL Fan Fest 2026. Their previous involvement with the IPL demonstrates their interest in cricket-related events.",
-      "estimated_deal_range": "$60M - $70M",
-      "priority": "High"
+      "sponsor_name": "Dream11",
+      "sponsor_type": "India Sponsor",
+      "relevance_reason": "Cricket event in India",
+      "estimated_deal_range": "5000000-10000000",
+      "priority": 1
     },
     {
-      "sponsor_name": "MRF",
-      "sponsor_type": "Official Bat Sponsor",
-      "relevance_reason": "MRF is an official sponsor of the IPL, which aligns with the cricket category of the IPL Fan Fest 2026. Their existing partnership with the IPL makes them a strong candidate for sponsorship.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "High"
+      "sponsor_name": "CRED",
+      "sponsor_type": "India Sponsor",
+      "relevance_reason": "Cricket event in India",
+      "estimated_deal_range": "3000000-7000000",
+      "priority": 2
     },
     {
-      "sponsor_name": "Cadbury",
-      "sponsor_type": "Official Snack Partner",
-      "relevance_reason": "Although Cadbury is currently partnered with the Premier League, their experience as an official snack partner could translate well to the IPL Fan Fest 2026. Their presence in India could also be an advantage.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "Medium"
+      "sponsor_name": "Mastercard",
+      "sponsor_type": "India Sponsor",
+      "relevance_reason": "Global brand with cricket sponsorships",
+      "estimated_deal_range": "4000000-9000000",
+      "priority": 3
     },
     {
-      "sponsor_name": "Nike",
-      "sponsor_type": "Official Apparel Partner",
-      "relevance_reason": "As an official ball supplier for the Premier League, Nike has experience in partnering with sports events. Their global presence and reputation in the sports industry make them a potential sponsor for the IPL Fan Fest 2026.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "Medium"
+      "sponsor_name": "Pepsi",
+      "sponsor_type": "Global Partner",
+      "relevance_reason": "Global brand with cricket sponsorships",
+      "estimated_deal_range": "6000000-12000000",
+      "priority": 4
     },
     {
-      "sponsor_name": "Barclays",
-      "sponsor_type": "Official Banking Partner",
-      "relevance_reason": "Although Barclays is currently partnered with the Premier League, their experience as a title sponsor could be valuable for the IPL Fan Fest 2026. However, their lack of direct involvement with cricket may reduce their relevance.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "Low"
+      "sponsor_name": "Booking.com",
+      "sponsor_type": "Official Partner",
+      "relevance_reason": "Global brand with event sponsorships",
+      "estimated_deal_range": "2000000-5000000",
+      "priority": 5
     },
     {
-      "sponsor_name": "Google",
-      "sponsor_type": "Official Technology Partner",
-      "relevance_reason": "As an official search partner for the NBA, Google has experience in partnering with sports events. Their global presence and reputation in the technology industry make them a potential sponsor for the IPL Fan Fest 2026.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "Low"
+      "sponsor_name": "Dream11",
+      "sponsor_type": "India Sponsor",
+      "relevance_reason": "Previous sponsor of cricket events in India",
+      "estimated_deal_range": "5000000-10000000",
+      "priority": 6
     },
     {
-      "sponsor_name": "EA Sports",
-      "sponsor_type": "Gaming Partner",
-      "relevance_reason": "Although EA Sports is currently partnered with La Liga, their experience in the sports industry and popularity among cricket fans could make them a potential sponsor for the IPL Fan Fest 2026.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "Low"
+      "sponsor_name": "CRED",
+      "sponsor_type": "India Sponsor",
+      "relevance_reason": "Previous sponsor of cricket events in India",
+      "estimated_deal_range": "3000000-7000000",
+      "priority": 7
     },
     {
-      "sponsor_name": "Lucas Oil",
-      "sponsor_type": "Official Lubricant Partner",
-      "relevance_reason": "Although Lucas Oil is currently partnered with the English football league, their experience as a main sponsor could be valuable for the IPL Fan Fest 2026. However, their lack of direct involvement with cricket may reduce their relevance.",
-      "estimated_deal_range": "Negotiable",
-      "priority": "Low"
+      "sponsor_name": "Mastercard",
+      "sponsor_type": "India Sponsor",
+      "relevance_reason": "Previous sponsor of cricket events in India",
+      "estimated_deal_range": "4000000-9000000",
+      "priority": 8
     }
   ],
-  "speakers": null,
-  "exhibitors": null,
-  "venues": null,
-  "pricing": null,
-  "communities": null,
+  "speakers": [
+    {
+      "name": "Kumar Sangakkara",
+      "sport_or_domain": "cricket",
+      "nationality": "Sri Lankan",
+      "role": "Speaker",
+      "why_recommended": "International cricket experience",
+      "influence_level": "High"
+    },
+    {
+      "name": "Aakash Chopra",
+      "sport_or_domain": "cricket",
+      "nationality": "Indian",
+      "role": "Speaker",
+      "why_recommended": "Expert analysis and commentary",
+      "influence_level": "Medium"
+    },
+    {
+      "name": "Ravi Shastri",
+      "sport_or_domain": "cricket",
+      "nationality": "Indian",
+      "role": "Speaker",
+      "why_recommended": "Former team captain and coach",
+      "influence_level": "High"
+    },
+    {
+      "name": "Sunil Gavaskar",
+      "sport_or_domain": "cricket",
+      "nationality": "Indian",
+      "role": "Speaker",
+      "why_recommended": "Legendary batsman and cricket expert",
+      "influence_level": "High"
+    },
+    {
+      "name": "Kevin Pietersen",
+      "sport_or_domain": "cricket",
+      "nationality": "British",
+      "role": "Speaker",
+      "why_recommended": "International cricket experience and expertise",
+      "influence_level": "Medium"
+    }
+  ],
+  "exhibitors": [
+    {
+      "company_name": "MPL",
+      "category": "Fantasy Sports",
+      "sub_category": "Mobile Premier League",
+      "geography": "India",
+      "why_good_fit": "Strong presence in Indian sports events and fantasy sports category",
+      "booth_tier": "Platinum"
+    },
+    {
+      "company_name": "Dream11",
+      "category": "Fantasy Sports",
+      "sub_category": "Fantasy Platform",
+      "geography": "India",
+      "why_good_fit": "Leading fantasy sports platform with strong event presence",
+      "booth_tier": "Platinum"
+    },
+    {
+      "company_name": "JSW Sports",
+      "category": "Sports Management",
+      "sub_category": "Multi-sport India",
+      "geography": "India",
+      "why_good_fit": "Established sports management company with event experience",
+      "booth_tier": "Gold"
+    },
+    {
+      "company_name": "Thums Up",
+      "category": "Beverages",
+      "sub_category": "In-Stadium",
+      "geography": "India",
+      "why_good_fit": "Official partner with in-stadium presence, aligns with cricket audience",
+      "booth_tier": "Silver"
+    },
+    {
+      "company_name": "Haier",
+      "category": "Consumer Electronics",
+      "sub_category": "Jersey/LED Board",
+      "geography": "India",
+      "why_good_fit": "Relevant product offerings for sports events, official partner",
+      "booth_tier": "Silver"
+    }
+  ],
+  "venues": [
+    {
+      "venue_name": "Rajiv Gandhi International Cricket Stadium",
+      "city": "Hyderabad",
+      "country": "India",
+      "capacity": 55000,
+      "sport_suitability": "Cricket",
+      "estimated_rental_range_usd": "50000-100000",
+      "recommendation_reason": "High capacity and suitable for cricket",
+      "rank": 1
+    },
+    {
+      "venue_name": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+      "city": "Lucknow",
+      "country": "India",
+      "capacity": 50000,
+      "sport_suitability": "Cricket",
+      "estimated_rental_range_usd": "40000-90000",
+      "recommendation_reason": "Exact capacity match and suitable for cricket",
+      "rank": 2
+    },
+    {
+      "venue_name": "Jawaharlal Nehru Stadium",
+      "city": "New Delhi",
+      "country": "India",
+      "capacity": 60000,
+      "sport_suitability": "Cricket",
+      "estimated_rental_range_usd": "60000-120000",
+      "recommendation_reason": "High capacity and suitable for cricket",
+      "rank": 3
+    },
+    {
+      "venue_name": "National Cricket Stadium",
+      "city": "Mumbai",
+      "country": "India",
+      "capacity": 45000,
+      "sport_suitability": "Cricket",
+      "estimated_rental_range_usd": "35000-80000",
+      "recommendation_reason": "Suitable for cricket, but slightly lower capacity",
+      "rank": 4
+    },
+    {
+      "venue_name": "Jawaharlal Nehru Stadium",
+      "city": "Kochi",
+      "country": "India",
+      "capacity": 60000,
+      "sport_suitability": "Cricket",
+      "estimated_rental_range_usd": "50000-100000",
+      "recommendation_reason": "High capacity and suitable for cricket",
+      "rank": 5
+    }
+  ],
+  "pricing": {
+    "pricing_tiers": [
+      {
+        "tier": "Budget",
+        "avg_price_usd": 15.0,
+        "vip_price_usd": 500.0
+      },
+      {
+        "tier": "Premium Stand",
+        "avg_price_usd": 26.0
+      }
+    ],
+    "total_expected_attendance": 50000,
+    "total_revenue_projection_usd": 1300000.0,
+    "break_even_attendance": 25000,
+    "confidence": 0.8,
+    "reasoning": "The pricing model is based on the provided benchmarks for IPL events in India. The budget tier is priced at $15.0, which is the average price for an IPL Final event. The premium stand tier is priced at $26.0, which is the average of the provided premium stand prices. The total expected attendance is 50,000, and the total revenue projection is $1,300,000. The break-even attendance is 25,000, assuming a revenue requirement of $650,000 (50% of the total revenue projection). The confidence level is 0.8, indicating a moderate level of confidence in the pricing model due to the availability of relevant benchmarks and historical attendance data."
+  },
+  "communities": {
+    "target_communities": [
+      {
+        "community_name": "Cricket.com Community",
+        "platform": "Web Forum",
+        "niche": "cricket",
+        "estimated_reach": 300000,
+        "engagement_tactic": "Sponsored content and contests"
+      },
+      {
+        "community_name": "r/IPL",
+        "platform": "Reddit",
+        "niche": "cricket",
+        "estimated_reach": 812496,
+        "engagement_tactic": "AMAs with IPL players and live discussion threads"
+      },
+      {
+        "community_name": "Cricbuzz Fan Zone",
+        "platform": "Mobile App",
+        "niche": "cricket",
+        "estimated_reach": 5000000,
+        "engagement_tactic": "In-app notifications and exclusive offers"
+      }
+    ],
+    "gtm_strategy": {
+      "channels": [
+        "Social Media",
+        "Influencer Marketing",
+        "Content Marketing",
+        "Paid Advertising"
+      ],
+      "key_messages": [
+        "Join the largest IPL fan community",
+        "Get exclusive updates and behind-the-scenes content",
+        "Win exciting prizes and experiences"
+      ],
+      "influencer_approach": "Partner with popular cricket influencers and IPL team ambassadors",
+      "timeline_weeks": 12
+    }
+  },
   "ops_plan": {
     "agenda": [
       {
-        "time_slot": "9:00 AM - 9:30 AM",
+        "time_slot": "9:00 AM - 9:15 AM",
         "session_title": "Opening Ceremony",
-        "session_type": "Ceremony",
-        "speaker_or_performer": "TBD",
+        "session_type": "Opening",
+        "speaker_or_performer": "IPL Anthem Performance",
         "room_or_stage": "Main Stage",
-        "duration_minutes": 30
+        "duration_minutes": 15
       },
       {
-        "time_slot": "9:30 AM - 10:30 AM",
-        "session_title": "IPL Team Owners' Panel",
-        "session_type": "Panel Discussion",
-        "speaker_or_performer": "IPL Team Owners",
+        "time_slot": "9:15 AM - 10:30 AM",
+        "session_title": "Session 1: Cricket Legends",
+        "session_type": "Main Session",
+        "speaker_or_performer": "Sunil Gavaskar, Ravi Shastri",
         "room_or_stage": "Main Stage",
-        "duration_minutes": 60
+        "duration_minutes": 75
       },
       {
-        "time_slot": "10:30 AM - 10:50 AM",
-        "session_title": "Networking Break",
+        "time_slot": "10:30 AM - 10:45 AM",
+        "session_title": "Break",
         "session_type": "Break",
-        "speaker_or_performer": "None",
-        "room_or_stage": "Entire Venue",
-        "duration_minutes": 20
+        "speaker_or_performer": "Kumar Sangakkara",
+        "room_or_stage": "",
+        "duration_minutes": 15
       },
       {
-        "time_slot": "10:50 AM - 12:00 PM",
-        "session_title": "Cricket Analytics and Strategy",
-        "session_type": "Keynote",
-        "speaker_or_performer": "TBD",
+        "time_slot": "10:45 AM - 12:00 PM",
+        "session_title": "Session 2: International Perspectives",
+        "session_type": "Main Session",
+        "speaker_or_performer": "Kumar Sangakkara, Kevin Pietersen",
         "room_or_stage": "Main Stage",
-        "duration_minutes": 70
+        "duration_minutes": 75
       },
       {
         "time_slot": "12:00 PM - 1:00 PM",
         "session_title": "Lunch Break",
         "session_type": "Break",
-        "speaker_or_performer": "None",
-        "room_or_stage": "Entire Venue",
+        "speaker_or_performer": "Kumar Sangakkara",
+        "room_or_stage": "",
         "duration_minutes": 60
       },
       {
-        "time_slot": "1:00 PM - 2:30 PM",
-        "session_title": "IPL Players' Panel",
-        "session_type": "Panel Discussion",
-        "speaker_or_performer": "IPL Players",
+        "time_slot": "1:00 PM - 2:15 PM",
+        "session_title": "Session 3: Indian Cricket",
+        "session_type": "Main Session",
+        "speaker_or_performer": "Aakash Chopra, Ravi Shastri",
         "room_or_stage": "Main Stage",
-        "duration_minutes": 90
+        "duration_minutes": 75
       },
       {
-        "time_slot": "2:30 PM - 2:50 PM",
-        "session_title": "Networking Break",
+        "time_slot": "2:15 PM - 2:30 PM",
+        "session_title": "Break",
         "session_type": "Break",
-        "speaker_or_performer": "None",
-        "room_or_stage": "Entire Venue",
-        "duration_minutes": 20
+        "speaker_or_performer": "Kumar Sangakkara",
+        "room_or_stage": "",
+        "duration_minutes": 15
       },
       {
-        "time_slot": "2:50 PM - 4:00 PM",
-        "session_title": "Fantasy Cricket and Gaming",
-        "session_type": "Workshop",
-        "speaker_or_performer": "TBD",
-        "room_or_stage": "Side Stage",
-        "duration_minutes": 70
-      },
-      {
-        "time_slot": "4:00 PM - 4:30 PM",
-        "session_title": "Networking Break",
-        "session_type": "Break",
-        "speaker_or_performer": "None",
-        "room_or_stage": "Entire Venue",
-        "duration_minutes": 30
-      },
-      {
-        "time_slot": "4:30 PM - 6:00 PM",
-        "session_title": "IPL Legends' Panel",
-        "session_type": "Panel Discussion",
-        "speaker_or_performer": "IPL Legends",
+        "time_slot": "2:30 PM - 3:45 PM",
+        "session_title": "Panel Discussion",
+        "session_type": "Main Session",
+        "speaker_or_performer": "All Speakers",
         "room_or_stage": "Main Stage",
-        "duration_minutes": 90
+        "duration_minutes": 75
       },
       {
-        "time_slot": "6:00 PM - 6:30 PM",
+        "time_slot": "3:45 PM - 6:00 PM",
         "session_title": "Closing Ceremony",
-        "session_type": "Ceremony",
-        "speaker_or_performer": "TBD",
+        "session_type": "Closing",
+        "speaker_or_performer": "IPL Anthem Performance, Prize Distribution",
         "room_or_stage": "Main Stage",
-        "duration_minutes": 30
-      },
-      {
-        "time_slot": "6:30 PM - 8:00 PM",
-        "session_title": "Final Networking and Event Wrap-up",
-        "session_type": "Networking",
-        "speaker_or_performer": "None",
-        "room_or_stage": "Entire Venue",
-        "duration_minutes": 90
+        "duration_minutes": 150
       }
     ],
     "conflicts_detected": [],
     "resource_plan": {
-      "total_rooms_needed": 2,
+      "total_rooms_needed": 1,
       "total_staff_est": 50,
       "equipment_checklist": [
-        "Sound systems",
-        "Lighting",
+        "Main Stage",
+        "Sound and Lighting Equipment",
+        "Stage Decorations",
+        "Microphones",
+        "Speakers",
         "Projectors",
-        "Screens",
-        "Microphones"
+        "Screen"
       ],
-      "logistics_notes": "Arrange for catering, security, and crowd control. Ensure sufficient parking and transportation options."
+      "logistics_notes": "Ensure sufficient parking and security arrangements for the audience."
     },
-    "event_day_summary": "The IPL Fan Fest 2026 will feature a packed agenda with a mix of panel discussions, keynotes, workshops, and networking breaks. The event will bring together IPL team owners, players, legends, and fans for a day of engaging discussions and activities. The event will conclude with a closing ceremony and final networking session."
+    "event_day_summary": "The IPL Fan Fest 2026 will be a one-day event held at the Rajiv Gandhi International Cricket Stadium in India, featuring cricket legends and international perspectives. The event will start with an opening ceremony and conclude with a closing ceremony, including a panel discussion and prize distribution."
   },
   "errors": []
 }

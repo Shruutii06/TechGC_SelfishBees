@@ -1,69 +1,56 @@
-### Conference Planning Report
-#### 1. Executive Summary
-The IPL Fan Fest 2026 is a cricket-themed event targeting an audience of 50,000 in India. The event will feature a mix of panel discussions, keynotes, workshops, and networking breaks, bringing together IPL team owners, players, legends, and fans. The event aims to provide a engaging and interactive experience for attendees. With a strong lineup of potential sponsors and a well-structured agenda, the IPL Fan Fest 2026 is poised to be a successful event.
+**IPL Fan Fest 2026 Conference Report**
+=====================================
 
-#### 2. Recommended Sponsors
-The top 5 recommended sponsors for the IPL Fan Fest 2026 are:
-1. **Tata Group** (Title Sponsor, Tier 1) - Estimated deal range: $60M - $70M
-2. **MRF** (Official Bat Sponsor, Tier 1) - Estimated deal range: Negotiable
-3. **Cadbury** (Official Snack Partner, Tier 2) - Estimated deal range: Negotiable
-4. **Nike** (Official Apparel Partner, Tier 2) - Estimated deal range: Negotiable
-5. **Barclays** (Official Banking Partner, Tier 3) - Estimated deal range: Negotiable
+### Executive Summary
 
-#### 3. Featured Speakers / Performers
-The top 5 featured speakers/performers for the IPL Fan Fest 2026 are:
-1. **IPL Team Owners** (Panel Discussion) - Main Stage
-2. **IPL Players** (Panel Discussion) - Main Stage
-3. **IPL Legends** (Panel Discussion) - Main Stage
-4. **TBD** (Keynote on Cricket Analytics and Strategy) - Main Stage
-5. **TBD** (Workshop on Fantasy Cricket and Gaming) - Side Stage
+The IPL Fan Fest 2026 is a one-day conference event that brings together cricket legends, international perspectives, and fans from across India. The event will be held at the Rajiv Gandhi International Cricket Stadium in Hyderabad, India, with a capacity of 55,000 attendees. The conference will feature a lineup of renowned speakers, including Kumar Sangakkara, Ravi Shastri, and Sunil Gavaskar, among others. The event will also include a panel discussion, prize distribution, and a closing ceremony.
 
-#### 4. Exhibitor Lineup
-Exhibitors will be categorized into the following groups:
-* Cricket equipment and apparel
-* Food and beverage
-* Sports technology and gaming
-* Lifestyle and entertainment
+### Sponsors
 
-#### 5. Venue Recommendation
-The top choice for the venue is a large, indoor stadium or convention center in a major city in India, such as Mumbai or Delhi. This venue should have a minimum capacity of 50,000 and provide ample space for exhibitions, panels, and networking breaks.
+| Sponsor Name | Sponsor Type | Relevance Reason | Estimated Deal Range (USD) | Priority |
+| --- | --- | --- | --- | --- |
+| Dream11 | India Sponsor | Cricket event in India | 5,000,000 - 10,000,000 | 1 |
+| CRED | India Sponsor | Cricket event in India | 3,000,000 - 7,000,000 | 2 |
+| Mastercard | India Sponsor | Global brand with cricket sponsorships | 4,000,000 - 9,000,000 | 3 |
+| Pepsi | Global Partner | Global brand with cricket sponsorships | 6,000,000 - 12,000,000 | 4 |
+| Booking.com | Official Partner | Global brand with event sponsorships | 2,000,000 - 5,000,000 | 5 |
 
-#### 6. Ticket Pricing Model
-The ticket pricing model will consist of three tiers:
-* **VIP**: ₹5,000 - ₹10,000 (approximately $65 - $130 USD)
-* **Premium**: ₹2,000 - ₹5,000 (approximately $25 - $65 USD)
-* **General Admission**: ₹1,000 - ₹2,000 (approximately $13 - $25 USD)
-Revenue projection: ₹50 million - ₹100 million (approximately $650,000 - $1.3 million USD)
+### Speakers
 
-#### 7. GTM & Community Strategy
-The key channels for the GTM strategy will be:
-* Social media (Facebook, Twitter, Instagram, and LinkedIn)
-* Email marketing
-* Influencer partnerships
-* Online advertising (Google Ads and Facebook Ads)
-The community strategy will consist of three phases:
-1. **Pre-event**: Build hype and excitement through social media and email marketing
-2. **During the event**: Engage with attendees through social media and provide updates on the event schedule
-3. **Post-event**: Share highlights and photos from the event and encourage attendees to share their experiences
+| Speaker Name | Sport/Domain | Nationality | Role | Why Recommended | Influence Level |
+| --- | --- | --- | --- | --- | --- |
+| Kumar Sangakkara | Cricket | Sri Lankan | Speaker | International cricket experience | High |
+| Aakash Chopra | Cricket | Indian | Speaker | Expert analysis and commentary | Medium |
+| Ravi Shastri | Cricket | Indian | Speaker | Former team captain and coach | High |
+| Sunil Gavaskar | Cricket | Indian | Speaker | Legendary batsman and cricket expert | High |
+| Kevin Pietersen | Cricket | British | Speaker | International cricket experience and expertise | Medium |
 
-#### 8. Event Day Schedule
-The key time slots for the event are:
-* 9:00 AM - 9:30 AM: Opening Ceremony
-* 9:30 AM - 10:30 AM: IPL Team Owners' Panel
-* 1:00 PM - 2:30 PM: IPL Players' Panel
-* 4:30 PM - 6:00 PM: IPL Legends' Panel
-* 6:00 PM - 6:30 PM: Closing Ceremony
+### Exhibitors
 
-#### 9. Resource & Ops Plan
-The resource plan includes:
-* 2 rooms (Main Stage and Side Stage)
-* 50 staff members
-* Equipment checklist: sound systems, lighting, projectors, screens, and microphones
-* Logistics notes: arrange for catering, security, and crowd control; ensure sufficient parking and transportation options
+| Company Name | Category | Sub-Category | Geography | Why Good Fit | Booth Tier |
+| --- | --- | --- | --- | --- | --- |
+| MPL | Fantasy Sports | Mobile Premier League | India | Strong presence in Indian sports events and fantasy sports category | Platinum |
+| Dream11 | Fantasy Sports | Fantasy Platform | India | Leading fantasy sports platform with strong event presence | Platinum |
+| JSW Sports | Sports Management | Multi-sport India | India | Established sports management company with event experience | Gold |
+| Thums Up | Beverages | In-Stadium | India | Official partner with in-stadium presence, aligns with cricket audience | Silver |
+| Haier | Consumer Electronics | Jersey/LED Board | India | Relevant product offerings for sports events, official partner | Silver |
 
-#### 10. Risk Flags
-No conflicts or gaps were detected in the planning process. However, it is essential to continuously monitor and assess potential risks, such as:
-* Last-minute cancellations by speakers or performers
-* Technical issues with equipment or sound systems
-* Unforeseen weather conditions (if the event is held outdoors)
-* Insufficient crowd control or security measures
+### Venue
+
+| Venue Name | City | Country | Capacity | Sport Suitability | Estimated Rental Range (USD) | Recommendation Reason |
+| --- | --- | --- | --- | --- | --- | --- |
+| Rajiv Gandhi International Cricket Stadium | Hyderabad | India | 55,000 | Cricket | 50,000 - 100,000 | High capacity and suitable for cricket |
+
+### Pricing
+
+| Pricing Tier | Avg. Price (USD) | VIP Price (USD) |
+| --- | --- | --- |
+| Budget | 15.0 | 500.0 |
+| Premium Stand | 26.0 | - |
+
+### GTM Strategy
+
+| Channel | Key Message | Influencer Approach | Timeline (Weeks) |
+| --- | --- | --- | --- |
+| Social Media | Join the largest IPL fan community | Partner with popular cricket influencers and IPL team ambassadors | 12 |
+| Influencer Marketing |
