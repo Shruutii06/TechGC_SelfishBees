@@ -908,7 +908,44 @@ if "state" in st.session_state:
     """, unsafe_allow_html=True)
 
     # ── Metrics ───────────────────────────────────────────────────────────────
-    tiers     = pricing.get("pricing_tiers", [])
+    # ── Normalize pricing_tiers defensively on the frontend too ──────────────
+    # The LLM may return a dict instead of list, or use different key names.
+    _TIER_ALIASES = {
+        "tier_name":       ["tier_name", "name", "tier", "ticket_type", "category",
+                            "level", "type", "label", "ticket_tier", "section"],
+        "price_usd":       ["price_usd", "price", "cost", "amount", "ticket_price",
+                            "price_per_ticket", "rate", "value", "usd", "fee"],
+        "expected_sales":  ["expected_sales", "sales", "quantity", "tickets",
+                            "expected_tickets", "units", "capacity", "count"],
+        "revenue_est_usd": ["revenue_est_usd", "revenue", "revenue_est",
+                            "estimated_revenue", "rev", "income"],
+    }
+    def _norm_tier(t):
+        low = {k.lower(): v for k, v in t.items()}
+        r = {}
+        for canon, aliases in _TIER_ALIASES.items():
+            for a in aliases:
+                if a in low:
+                    r[canon] = low[a]
+                    break
+        if "tier_name" not in r:
+            r["tier_name"] = next(iter(t.values()), "—")
+        return r
+
+    _raw_tiers = pricing.get("pricing_tiers", [])
+    if isinstance(_raw_tiers, dict):
+        _tiers_list = []
+        for _k, _v in _raw_tiers.items():
+            if isinstance(_v, dict):
+                _v.setdefault("tier_name", _k)
+                _tiers_list.append(_norm_tier(_v))
+            else:
+                _tiers_list.append({"tier_name": _k, "price_usd": _v})
+        tiers = _tiers_list
+    elif isinstance(_raw_tiers, list):
+        tiers = [_norm_tier(t) if isinstance(t, dict) else t for t in _raw_tiers]
+    else:
+        tiers = []
     total_rev = pricing.get("total_revenue_projection_usd", 0)
 
     st.markdown(f"""
@@ -1019,28 +1056,64 @@ if "state" in st.session_state:
                 st.info("No venue data returned.")
 
     # ── PRICING ───────────────────────────────────────────────────────────────
+    # ── PRICING ───────────────────────────────────────────────────────────────
     with tabs[3]:
         if tiers:
             tiers_html = '<div class="pricing-grid">'
+
             for t in tiers:
+            # ── CASE 1: Proper dict ─────────────────────
+                if isinstance(t, dict):
+                    name  = t.get('tier_name', '—')
+                    price = t.get('price_usd')
+                    sales = t.get('expected_sales')
+                    rev   = t.get('revenue_est_usd')
+
+                    price_display = f"${price:,}" if isinstance(price, (int, float)) else "—"
+                    sales_display = f"{sales:,} tickets" if isinstance(sales, (int, float)) else ""
+                    rev_display   = f"+${rev:,.0f}" if isinstance(rev, (int, float)) else ""
+
+            # ── CASE 2: String like "VIP - $100" ───────
+                elif isinstance(t, str):
+                    name = t
+
+                    import re
+                    match = re.search(r"\$?(\d+)", t)
+                    if match:
+                        price_display = f"${int(match.group(1)):,}"
+                    else:
+                        price_display = "—"
+
+                    sales_display = ""
+                    rev_display   = ""
+
+            # ── CASE 3: Unknown format ────────────────
+                else:
+                    name = "—"
+                    price_display = "—"
+                    sales_display = ""
+                    rev_display   = ""
+
                 tiers_html += f"""
                 <div class="pricing-tier">
-                  <div class="tier-name">{t.get('tier_name','—')}</div>
-                  <div class="tier-price">${t.get('price_usd',0):,}</div>
-                  <div class="tier-sales">{t.get('expected_sales',0):,} tickets</div>
-                  <div class="tier-rev">+${t.get('revenue_est_usd',0):,.0f}</div>
+                  <div class="tier-name">{name}</div>
+                  <div class="tier-price">{price_display}</div>
+                  <div class="tier-sales">{sales_display}</div>
+                  <div class="tier-rev">{rev_display}</div>
                 </div>"""
+
             tiers_html += '</div>'
             st.markdown(tiers_html, unsafe_allow_html=True)
 
             col1, col2, col3 = st.columns(3)
-            col1.metric("Total Attendance",      f"{pricing.get('total_expected_attendance',0):,}")
-            col2.metric("Revenue Projection",    f"${pricing.get('total_revenue_projection_usd',0):,.0f}")
+            col1.metric("Total Attendance", f"{pricing.get('total_expected_attendance',0):,}")
+            col2.metric("Revenue Projection", f"${pricing.get('total_revenue_projection_usd',0):,.0f}")
             col3.metric("Break-even Attendance", f"{pricing.get('break_even_attendance',0):,}")
 
-            conf = pricing.get("confidence","—")
+            conf = pricing.get("confidence", "—")
             st.markdown(f"<div class='sec-label'>Model Confidence — {conf}</div>", unsafe_allow_html=True)
             st.caption(pricing.get("reasoning",""))
+
         else:
             section = extract_report_section(final_plan, ["pricing", "ticket", "price"])
             if section:
@@ -1048,6 +1121,10 @@ if "state" in st.session_state:
                 st.markdown(section)
             else:
                 st.info("No pricing data returned.")
+
+        # Debug expander — remove after confirmed working
+        with st.expander("🔍 Raw pricing data (debug)", expanded=False):
+            st.json(pricing)
 
     # ── EXHIBITORS ────────────────────────────────────────────────────────────
     with tabs[4]:
