@@ -56,7 +56,7 @@ def run_exhibitor_agent(state: AgentState):
     llm = ChatGroq(
         model="llama-3.3-70b-versatile",
         temperature=0.2,
-        max_tokens=400   # ✅ avoid rate limit
+        max_tokens=900   # increased — 400 caused JSON truncation
     )
 
     messages = [
@@ -84,7 +84,25 @@ Recommend top exhibitors using ONLY real company names.
             flags=re.MULTILINE
         ).strip()
 
-        exhibitors = json.loads(text)
+        # ── Truncation-safe JSON recovery ─────────────────────────────────────
+        # If max_tokens cuts the response mid-JSON, recover any complete objects
+        try:
+            exhibitors = json.loads(text)
+        except json.JSONDecodeError:
+            # Find the last complete JSON object in the array
+            last_brace = text.rfind("},")
+            if last_brace == -1:
+                last_brace = text.rfind("}")
+            if last_brace != -1:
+                recovered = text[:last_brace + 1].strip()
+                # Wrap in array if needed
+                if not recovered.startswith("["):
+                    recovered = "[" + recovered
+                recovered += "]"
+                exhibitors = json.loads(recovered)
+                print(f"⚠️ Recovered {len(exhibitors)} exhibitors from truncated JSON")
+            else:
+                raise
 
         if not isinstance(exhibitors, list):
             raise ValueError("Invalid exhibitor output")
