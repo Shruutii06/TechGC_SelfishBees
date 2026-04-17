@@ -1,6 +1,7 @@
 # 🏟️ AI Conference Organizer — Multi-Agent System
 
 > **TechGC · Team Code - 11052**
+
 > An autonomous, LangGraph-powered multi-agent system for end-to-end conference and sports event planning — from sponsor discovery to ops scheduling.
 
 ---
